@@ -54,10 +54,6 @@ export const ConnectionCheck: React.FC = () => {
 					<li>
 						Switch Wi-Fi networks or use your smartphone's hotspot (such as 5G)
 					</li>
-					<li>
-						<b>Did you know?</b> You can turn off your camera during your video
-						call to improve the call quality.
-					</li>
 				</ol>
 			</TroubleShooting>
 		);
@@ -70,7 +66,7 @@ export const ConnectionCheck: React.FC = () => {
 					<>
 						<h3>Your internet connection is good</h3>
 						<p>
-							You can expect good video quality. If the call is choppy, then the
+							You can expect good audio quality. If the call is choppy, then the
 							other person probably has a poor connection.
 						</p>
 					</>
@@ -81,7 +77,7 @@ export const ConnectionCheck: React.FC = () => {
 						<h3>Bad internet connection detected</h3>
 						<p>
 							Our test indicated a bad internet connection. To prevent choppy
-							sound or frozen video, try any of these tips:
+							sound, try any of these tips:
 						</p>
 						{tips()}
 					</>
@@ -92,7 +88,7 @@ export const ConnectionCheck: React.FC = () => {
 						<h3>Unstable internet connection detected</h3>
 						<p>
 							Our test indicated an unstable internet connection. To prevent
-							choppy sound or frozen video, try any of these tips:
+							choppy sound, try any of these tips:
 						</p>
 						{tips()}
 					</>
@@ -136,7 +132,7 @@ export const ConnectionCheck: React.FC = () => {
 					We don't have access to your video and/or audio. This means we cannot
 					check your network speed. Please make sure your browser has access to
 					your camera and microphone, and try going through the test again. You
-					can still make video calls without a camera or microphone, but people
+					can still make calls without a camera or microphone, but people
 					will not be able to hear or see you.
 				</TroubleShooting>
 			)}

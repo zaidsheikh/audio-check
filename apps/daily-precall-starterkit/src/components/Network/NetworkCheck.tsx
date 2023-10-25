@@ -41,20 +41,20 @@ export const NetworkCheck: React.FC = () => {
 			case 'connected':
 				return (
 					<>
-						<h3>Your network supports video call communication</h3>
+						<h3>Your network supports audio call communication</h3>
 						<p>
 							Your network can communicate with other online networks. This
-							means you can make video calls.
+							means you can make audio calls.
 						</p>
 					</>
 				);
 			case 'failed':
 				return (
 					<>
-						<h3>Your network does not support video call communication</h3>
+						<h3>Your network does not support audio call communication</h3>
 						<p>
 							Your network cannot establish communication over any of the
-							available protocols. This means you cannot make video calls.
+							available protocols. This means you cannot make audio calls.
 							Contact your network administrator for support.
 						</p>
 					</>

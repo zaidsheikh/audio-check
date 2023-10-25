@@ -107,7 +107,7 @@ export const SpeakerCheck: React.FC = () => {
 		<Card title="Speakers">
 			<h2>Can you hear the sound?</h2>
 			<div className="options">
-				<Link to={`/mic-check`} className="link primary">
+				<Link to={`/audio-check/mic-check`} className="link primary">
 					Yes
 				</Link>
 				<button onClick={toggleTroubleShooting} className="button primary">
@@ -115,11 +115,11 @@ export const SpeakerCheck: React.FC = () => {
 				</button>
 			</div>
 
-			<Link to={`/mic-check`} className="link ghost">
+			<Link to={`/audio-check/mic-check`} className="link ghost">
 				I can’t see the screen due to a visual impairment
 			</Link>
 
-			<TroubleShooting show={showTroubleshooting} skipStep={'/mic-check'}>
+			<TroubleShooting show={showTroubleshooting} skipStep={'/audio-check/mic-check'}>
 				<p>
 					Is the volume turned up? Check to make sure that your volume is turned
 					up, and that the sound is not on mute.

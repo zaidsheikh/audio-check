@@ -44,16 +44,12 @@ export const App = () => {
 	return (
 		<div className="app">
 			<header>
-				<img src="../logo.svg" alt="Daily logo" />
 				<p>
-					The Daily API makes implementing a precall test a breeze, especially
-					when combined with the{' '}
-					<a href="https://docs.daily.co/reference/daily-react" target="_blank">
-						Daily React library
-					</a>
-					. This app demonstrates how to do network and device checks.
+					<h2>Test your speaker and microphone</h2>
 				</p>
+				<br></br>
 			</header>
+			<Navigation />
 			<main>
 				{dailyCallObject ? (
 					<DailyProvider
@@ -69,7 +65,6 @@ export const App = () => {
 					<UnsupportedBrowser />
 				)}
 			</main>
-			<Navigation />
 		</div>
 	);
 };

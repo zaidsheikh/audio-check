@@ -15,7 +15,7 @@
 }
 
 body {
-	background: rgba(var(--dark-accent));
+	/* background: rgba(var(--dark-accent)); */
 	line-height: 1.5;
 	font-size: 1rem;
 	display: flex;

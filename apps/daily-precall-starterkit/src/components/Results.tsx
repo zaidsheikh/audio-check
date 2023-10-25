@@ -16,12 +16,12 @@ export const Results = () => {
 		) {
 			return (
 				<>
-					You will be able to make video calls via the network you are on right
+					You will be able to make audio calls via the network you are on right
 					now.
 				</>
 			);
 		} else {
-			return <>You might not be able to make video calls via your network.</>;
+			return <>You might not be able to make audio calls via your network.</>;
 		}
 	}, [testData]);
 
@@ -31,7 +31,7 @@ export const Results = () => {
 		} else {
 			return (
 				<>
-					Your internet connection quality may not be optimal for video calls.
+					Your internet connection quality may not be optimal for audio calls.
 				</>
 			);
 		}

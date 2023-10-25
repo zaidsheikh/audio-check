@@ -4,21 +4,16 @@ export const Navigation = () => {
 	return (
 		<nav>
 			<NavLink
-				to={`video-check`}
+				to={`mic-check`}
 				className={({ isActive }) => (isActive ? 'active' : 'nav')}>
-				Video check
+				<h3>Microphone check</h3>
 			</NavLink>
 			<NavLink
 				to={`speaker-check`}
 				className={({ isActive }) => (isActive ? 'active' : 'nav')}>
-				Speaker check
+				<h3>Speaker check</h3>
 			</NavLink>
-			<NavLink
-				to={`mic-check`}
-				className={({ isActive }) => (isActive ? 'active' : 'nav')}>
-				Microphone check
-			</NavLink>
-			<NavLink
+			{/* <NavLink
 				to={`network-check`}
 				className={({ isActive }) => (isActive ? 'active' : 'nav')}>
 				Network check
@@ -35,7 +30,7 @@ export const Navigation = () => {
 			</NavLink>
 			<a href="/" className="nav">
 				Restart
-			</a>
+			</a> */}
 		</nav>
 	);
 };

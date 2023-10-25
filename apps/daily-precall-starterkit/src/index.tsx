@@ -13,7 +13,7 @@ import { Results } from './components/Results';
 
 const router = createBrowserRouter([
 	{
-		path: '/',
+		path: '/audio-check',
 		element: <App />,
 		children: [
 			{

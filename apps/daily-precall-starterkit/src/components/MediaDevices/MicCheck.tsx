@@ -167,7 +167,7 @@ export const MicCheck: React.FC = () => {
 				<>
 					<h2>Your microphone works!</h2>
 					<div>
-						<Link to={`/network-check`} className="link primary">
+						<Link to={`/audio-check/speaker-check`} className="link primary">
 							Next
 						</Link>
 					</div>
