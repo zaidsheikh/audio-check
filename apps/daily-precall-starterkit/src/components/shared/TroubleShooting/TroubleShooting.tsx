@@ -17,11 +17,11 @@ export const TroubleShooting: React.FC<React.PropsWithChildren<Props>> = ({
 			<article>
 				{children}
 				<nav>
-					<button
+					{/* <button
 						className="button primary"
 						onClick={() => window.location.reload()}>
 						Reload page
-					</button>
+					</button> */}
 					{skipStep && (
 						<Link className="link ghost" to={skipStep}>
 							Skip step

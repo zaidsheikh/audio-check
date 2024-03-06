@@ -4,7 +4,7 @@ import {
 	useLocalSessionId,
 	useAudioTrack,
 } from '@daily-co/daily-react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import { AudioAnalyser } from '../shared/AudioVisualiser/AudioAnalyser.ts';
 import { AudioVisualiser } from '../shared/AudioVisualiser/AudioVisualiser.tsx';
@@ -12,12 +12,16 @@ import { AudioVisualiser } from '../shared/AudioVisualiser/AudioVisualiser.tsx';
 import { Card } from '../shared/Card/Card';
 import { TroubleShooting } from '../shared/TroubleShooting/TroubleShooting';
 
-export const MicCheck: React.FC = () => {
+export const MicCheck: React.FC<{ rootPath: string }> = ({ rootPath }) => {
 	const localSessionId = useLocalSessionId();
 	const audioTrack = useAudioTrack(localSessionId ? localSessionId : '');
 	const { microphones, micState, hasMicError, setMicrophone } = useDevices();
 	const [micAnalyser, setMicAnalyser] = useState<AudioAnalyser | null>(null);
 	const [soundWorks, setSoundWorks] = useState(false);
+	// const audioCheckPath = window.location.hostname.endsWith(".github.io") ? '/audio-check' : '';
+	// const audioCheckPath = '/' + window.location.pathname.split('/')[1];
+	const audioCheckPath = rootPath;
+	console.log('audioCheckPath', audioCheckPath);
 
 	const [showTroubleshooting, setShowTroubleshooting] = useState(false);
 	const toggleTroubleShooting = () => {
@@ -65,7 +69,8 @@ export const MicCheck: React.FC = () => {
       How to handle them differs per browser: the recovery path for a blocked camera is slightly different
       on Firefox than it is in Chrome. Distinguishing between mobile and desktop devices is also key.*/}
 			{hasMicError && (
-				<TroubleShooting show skipStep={'/network-check'}>
+				// <TroubleShooting show skipStep={audioCheckPath + '/speaker-check'}>
+				<TroubleShooting show>
 					<h3>We have detected a microphone error.</h3>
 					{micState === 'blocked' && (
 						<>
@@ -129,9 +134,9 @@ export const MicCheck: React.FC = () => {
 				<>
 					<h2>Try making some noise!</h2>
 					<div className="options">
-						<Link className="link primary" to={`/network-check`}>
+						{/* <Link className="link primary" to={audioCheckPath + '/speaker-check'}>
 							Skip this step
-						</Link>
+						</Link> */}
 
 						<button onClick={toggleTroubleShooting} className="button ghost">
 							I need help
@@ -167,9 +172,9 @@ export const MicCheck: React.FC = () => {
 				<>
 					<h2>Your microphone works!</h2>
 					<div>
-						<Link to={`/audio-check/speaker-check`} className="link primary">
+						{/* <Link to={audioCheckPath + '/speaker-check'} className="link primary">
 							Next
-						</Link>
+						</Link> */}
 					</div>
 				</>
 			)}

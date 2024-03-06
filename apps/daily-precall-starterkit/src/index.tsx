@@ -11,9 +11,12 @@ import { ConnectionCheck } from './components/Network/ConnectionCheck';
 import { WebsocketsCheck } from './components/Network/WebsocketsCheck';
 import { Results } from './components/Results';
 
+const rootPath = '/' + window.location.pathname.split('/')[1];
 const router = createBrowserRouter([
 	{
-		path: '/audio-check',
+		//path: window.location.hostname.endsWith(".github.io") ? '/audio-check' : '/',
+		// path should be the subdirectory that comes after the domain name
+		path: rootPath,
 		element: <App />,
 		children: [
 			{
@@ -22,11 +25,11 @@ const router = createBrowserRouter([
 			},
 			{
 				path: 'speaker-check',
-				element: <SpeakerCheck />,
+				element: <SpeakerCheck rootPath={rootPath} />,
 			},
 			{
 				path: 'mic-check',
-				element: <MicCheck />,
+				element: <MicCheck rootPath={rootPath} />,
 			},
 			{
 				path: 'network-check',

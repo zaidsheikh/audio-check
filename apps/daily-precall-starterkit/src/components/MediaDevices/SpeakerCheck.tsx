@@ -12,7 +12,7 @@ import { TroubleShooting } from '../shared/TroubleShooting/TroubleShooting';
 
 import sound from '../shared/AudioVisualiser/sound.wav';
 
-export const SpeakerCheck: React.FC = () => {
+export const SpeakerCheck: React.FC<{ rootPath: string }> = ({ rootPath }) => {
 	const { speakers, setSpeaker } = useDevices();
 
 	const audioRef = useRef<HTMLAudioElement>(null);
@@ -20,6 +20,11 @@ export const SpeakerCheck: React.FC = () => {
 	const [speakerAnalyser, setSpeakerAnalyser] = useState<AudioAnalyser | null>(
 		null,
 	);
+
+	// const audioCheckPath = window.location.hostname.endsWith(".github.io") ? '/audio-check' : '';
+	// const audioCheckPath = '/' + window.location.pathname.split('/')[1];
+	const audioCheckPath = rootPath;
+	console.log('audioCheckPath', audioCheckPath);
 
 	const selectedSpeaker = useMemo(() => {
 		return speakers.find((s) => s.selected);
@@ -107,7 +112,8 @@ export const SpeakerCheck: React.FC = () => {
 		<Card title="Speakers">
 			<h2>Can you hear the sound?</h2>
 			<div className="options">
-				<Link to={`/audio-check/mic-check`} className="link primary">
+				{/* <Link to={audioCheckPath + '/mic-check'} className="link primary"> */}
+				<Link to={''} className="link primary">
 					Yes
 				</Link>
 				<button onClick={toggleTroubleShooting} className="button primary">
@@ -115,11 +121,12 @@ export const SpeakerCheck: React.FC = () => {
 				</button>
 			</div>
 
-			<Link to={`/audio-check/mic-check`} className="link ghost">
+			{/* <Link to={audioCheckPath + '/mic-check'} className="link ghost">
 				I can’t see the screen due to a visual impairment
-			</Link>
+			</Link> */}
 
-			<TroubleShooting show={showTroubleshooting} skipStep={'/audio-check/mic-check'}>
+			{/* <TroubleShooting show={showTroubleshooting} skipStep={audioCheckPath + '/mic-check'}> */}
+			<TroubleShooting show={showTroubleshooting} >
 				<p>
 					Is the volume turned up? Check to make sure that your volume is turned
 					up, and that the sound is not on mute.

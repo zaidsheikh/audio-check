@@ -2,7 +2,7 @@ import { Card } from './shared/Card/Card';
 
 export const UnsupportedBrowser = () => {
 	return (
-		<Card title="Your browser does not support audo calls.">
+		<Card title="Your browser does not support audio calls.">
 			<p>
 				Open this page in a different browser to make an audio call. Examples of
 				browsers that are supported are the latest versions of{' '}
